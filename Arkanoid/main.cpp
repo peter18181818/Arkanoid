@@ -214,21 +214,32 @@ int main()
         }
         }
 
-        if (((ball_direction == 2) && (ball_X_coordinate == width-1))||((ball_direction == 3) && (ball_Y_coordinate == height-1)))
+        for (;;)
         {
-            ball_direction = 1; // move left up
-        }
-        else if (((ball_direction == 1) && (ball_Y_coordinate == 1)) || ((ball_direction == 4) && (ball_X_coordinate == width-1)))
-        {
-            ball_direction = 3; // move left down
-        }
-        else if (((ball_direction == 3) && (ball_X_coordinate == 1)) || ((ball_direction == 2) && (ball_Y_coordinate == 1)))
-        {
-            ball_direction = 4; // move right down
-        }
-        else if (((ball_direction == 4) && (ball_Y_coordinate == height-1)) || ((ball_direction == 1) && (ball_X_coordinate == 1)))
-        {
-            ball_direction = 2; // move right up
+            bool direction_change = false;
+
+            if (((ball_direction == 2) && (ball_X_coordinate == width-1))||((ball_direction == 3) && (ball_Y_coordinate == height-1)))
+            {
+                ball_direction = 1; // move left up
+                direction_change = true;
+            }
+            else if (((ball_direction == 1) && (ball_Y_coordinate == 1)) || ((ball_direction == 4) && (ball_X_coordinate == width-1)))
+            {
+                ball_direction = 3; // move left down
+                direction_change = true;
+            }
+            else if (((ball_direction == 3) && (ball_X_coordinate == 1)) || ((ball_direction == 2) && (ball_Y_coordinate == 1)))
+            {
+                ball_direction = 4; // move right down
+                direction_change = true;
+            }
+            else if (((ball_direction == 4) && (ball_Y_coordinate == height-1)) || ((ball_direction == 1) && (ball_X_coordinate == 1)))
+            {
+                ball_direction = 2; // move right up
+                direction_change = true;
+            }
+            if (direction_change == false)
+                break;
         }
 
         // ball and player collision
