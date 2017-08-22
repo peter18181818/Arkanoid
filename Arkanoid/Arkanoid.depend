@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1503406516 source:c:\projekty\private workspace codeblocks cpp\moje cwiczenia\14. arkanoid ver.4\arkanoid ver.4\main.cpp
+	<iostream>
+	<conio.h>
+	<windows.h>
+	<stdlib.h>
+	<time.h>
+
